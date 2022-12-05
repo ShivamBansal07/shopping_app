@@ -8,6 +8,8 @@ A shopping app with api data fetching, cart and favourites system.
 * [ ] Api Data Fetching
 * [ ] Seperate screens for each product
 * [ ] Favourites and cart functionalities
-##Bonus Tasks
+
+## Bonus Tasks
+
 * [ ] Firebase (to be implemented)
 * [ ] Splash screen
