@@ -4,10 +4,11 @@ A shopping app with api data fetching, cart and favourites system.
 
 ## Todo
 
-* [ ] Basic app with home page and listing.
-* [ ] Api Data Fetching
+* [x] Basic app with home page and listing.
+* [x] Api Data Fetching
 * [ ] Seperate screens for each product
-* [ ] Favourites and cart functionalities
+* [ ] Favourites functionalities
+* [x] Cart functionalities
 
 ## Bonus Tasks
 
