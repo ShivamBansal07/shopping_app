@@ -1,16 +1,15 @@
-# shopping_app
+# Shopping App
 
-A new Flutter project.
+A shopping app with api data fetching, cart and favourites system.
 
-## Getting Started
+## Todo
 
-This project is a starting point for a Flutter application.
+* [ ] Basic app with home page and listing.
+* [ ] Api Data Fetching
+* [ ] Seperate screens for each product
+* [ ] Favourites and cart functionalities
 
-A few resources to get you started if this is your first Flutter project:
+## Bonus Tasks
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* [ ] Firebase (to be implemented)
+* [ ] Splash screen
