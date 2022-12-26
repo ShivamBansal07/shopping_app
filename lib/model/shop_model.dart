@@ -16,7 +16,9 @@ class ShopModel extends ChangeNotifier {
   UnmodifiableMapView<String, CartItem> get cart => UnmodifiableMapView(_cart);
 
   double get cartTotal => _cart.values.fold(
-      0, (previousValue, cartItem) => previousValue + cartItem.item.price);
+      0,
+      (previousValue, cartItem) =>
+          previousValue + cartItem.item.price * cartItem.count);
 
   void fetchProducts() async {
     try {
@@ -69,6 +71,11 @@ class ShopModel extends ChangeNotifier {
     } else {
       _cart.remove(item.id);
     }
+    notifyListeners();
+  }
+
+  void removecartitem(Item item) {
+    _cart.remove(item.id);
     notifyListeners();
   }
 }
