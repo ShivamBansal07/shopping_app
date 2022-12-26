@@ -7,11 +7,16 @@ import 'dart:convert' as convert;
 
 class ShopModel extends ChangeNotifier {
   final List<Item> _products = [];
+  final Map<String, CartItem> _cart = {};
   final Map<String, Item> _favourites = {};
 
   UnmodifiableListView<Item> get products => UnmodifiableListView(_products);
   UnmodifiableMapView<String, Item> get favourites =>
       UnmodifiableMapView(_favourites);
+  UnmodifiableMapView<String, CartItem> get cart => UnmodifiableMapView(_cart);
+
+  double get cartTotal => _cart.values.fold(
+      0, (previousValue, cartItem) => previousValue + cartItem.item.price);
 
   void fetchProducts() async {
     try {
@@ -48,6 +53,36 @@ class ShopModel extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void increasecartitem(Item item) {
+    if (_cart.containsKey(item.id)) {
+      _cart[item.id]?.incrementCount();
+    } else {
+      _cart[item.id] = CartItem(item);
+    }
+    notifyListeners();
+  }
+
+  void decreasecartitem(Item item) {
+    if (_cart.containsKey(item.id) && _cart[item.id]!.count > 1) {
+      _cart[item.id]!.decrementCount();
+    } else {
+      _cart.remove(item.id);
+    }
+    notifyListeners();
+  }
+}
+
+class CartItem {
+  final Item item;
+  int _count = 1;
+
+  int get count => _count;
+
+  CartItem(this.item);
+
+  void incrementCount() => _count++;
+  void decrementCount() => {if (_count > 0) _count--};
 }
 
 @immutable
