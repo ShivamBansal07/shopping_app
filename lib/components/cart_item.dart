@@ -11,7 +11,7 @@ class CartItemView extends StatelessWidget {
     final item = cart.item;
     final model = Provider.of<ShopModel>(context, listen: false);
     return SizedBox(
-        height: 80,
+        height: 100,
         child: ListTile(
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(10),
