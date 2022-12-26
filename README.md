@@ -8,7 +8,7 @@ A shopping app with api data fetching, cart and favourites system.
 * [x] Api Data Fetching
 * [ ] Seperate screens for each product
 * [x] Favourites functionalities
-* [ ] Cart functionalities
+* [x] Cart functionalities
 
 ## Bonus Tasks
 
