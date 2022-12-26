@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Screen/cart.dart';
 import 'package:shopping_app/Screen/favourites.dart';
 import 'package:shopping_app/Screen/products.dart';
 
@@ -112,20 +113,10 @@ PreferredSizeWidget appBar(BuildContext context) {
         padding: const EdgeInsets.only(right: 12),
         child: IconButton(
           onPressed: () {
-            showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                      title:
-                          // ignore: prefer_const_constructors
-                          Text('The Feature is currently under development.'),
-                      actions: [
-                        TextButton(
-                          // ignore: prefer_const_constructors
-                          child: Text('Ok'),
-                          onPressed: () => Navigator.pop(context),
-                        )
-                      ],
-                    ));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Cart()),
+            );
           },
           icon: const Icon(
             Icons.shopping_cart_outlined,
